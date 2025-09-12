@@ -1,3 +1,4 @@
+// src/store/slices/authSlice.js
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { loginUser, registerUser } from "../../api/authApi";
 
