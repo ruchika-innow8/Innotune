@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { userLogin } from "../../features/authSlice";
+import { userLogin } from "../../store/slices/authSlice";
 
 const Login = () => {
   const [form, setForm] = useState({ email: "", password: "" });

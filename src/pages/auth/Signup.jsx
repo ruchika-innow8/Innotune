@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { userSignup } from "../../features/authSlice"; // create a signup thunk similar to login
-
+import { userSignup } from "../../store/slices/authSlice";
 const Signup = () => {
   const [form, setForm] = useState({ email: "", name: "", password: "" });
   const [usePhone, setUsePhone] = useState(false);

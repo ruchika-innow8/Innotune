@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "../pages/auth/Login";
 import Signup from "../pages/auth/Signup";
-import Dashboard from "../pages/Dashboard";
+import Dashboard from "../pages";
 import { useSelector } from "react-redux";
 
 const AppRoutes = () => {
