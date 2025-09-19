@@ -206,54 +206,57 @@ const Signup = () => {
             )}
           </div>
 
-          <div className="relative">
-            <input
-              type={showPassword ? "text" : "password"}
-              name="password"
-              placeholder="Password"
-              value={form.password}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              className={`p-3 w-full rounded-md bg-neutral-800 text-white border ${
-                errors.password ? "border-red-500" : "border-neutral-700"
-              }`}
-            />
-            <button
-              type="button"
-              onClick={() => setShowPassword((s) => !s)}
-              className="absolute inset-y-0 right-3 flex items-center text-gray-400"
-            >
-              {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-            </button>
-            {errors.password ? (
+          {/* Password Field */}
+          <div className="mb-2">
+            <div className="relative flex items-center">
+              <input
+                type={showPassword ? "text" : "password"}
+                name="password"
+                placeholder="Password"
+                value={form.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={`p-3 w-full rounded-md bg-neutral-800 text-white border pr-10 ${
+                  errors.password ? "border-red-500" : "border-neutral-700"
+                }`}
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword((s) => !s)}
+                className="absolute right-3 text-gray-400"
+              >
+                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+              </button>
+            </div>
+            {errors.password && (
               <p className="text-xs text-red-500 mt-1">{errors.password}</p>
-            ) : (
-              <p className="text-xs text-neutral-400 mt-1">
-                Password must be at least 8 chars, include uppercase, lowercase,
-                number, and special char.
-              </p>
             )}
           </div>
 
-          <div className="relative">
-            <input
-              type={showConfirmPassword ? "text" : "password"}
-              name="confirmPassword"
-              placeholder="Confirm Password"
-              value={form.confirmPassword}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              className={`p-3 w-full rounded-md bg-neutral-800 text-white border ${
-                errors.confirmPassword ? "border-red-500" : "border-neutral-700"
-              }`}
-            />
-            <button
-              type="button"
-              onClick={() => setShowConfirmPassword((s) => !s)}
-              className="absolute inset-y-0 right-3 flex items-center text-gray-400"
-            >
-              {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-            </button>
+          {/* Confirm Password Field */}
+          <div className="mb-2">
+            <div className="relative flex items-center">
+              <input
+                type={showConfirmPassword ? "text" : "password"}
+                name="confirmPassword"
+                placeholder="Confirm Password"
+                value={form.confirmPassword}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={`p-3 w-full rounded-md bg-neutral-800 text-white border pr-10 ${
+                  errors.confirmPassword
+                    ? "border-red-500"
+                    : "border-neutral-700"
+                }`}
+              />
+              <button
+                type="button"
+                onClick={() => setShowConfirmPassword((s) => !s)}
+                className="absolute right-3 text-gray-400"
+              >
+                {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+              </button>
+            </div>
             {errors.confirmPassword && (
               <p className="text-xs text-red-500 mt-1">
                 {errors.confirmPassword}
